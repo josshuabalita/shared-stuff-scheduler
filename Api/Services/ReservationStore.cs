@@ -18,9 +18,24 @@ public class ReservationStore
     public ReservationStore()
     {
         // mock data only
-        var tomorrow = DateTime.Today.AddDays(1);
+        var today = DateTime.Today;
+        var tomorrow = today.AddDays(1);
+        var thisHour = today.AddHours(DateTime.Now.Hour);
+
+        // in use right now
+        TryAdd(3, "Sofia Nguyen", thisHour.AddHours(-1), thisHour.AddHours(2));
+
+        // next 7 days
         TryAdd(1, "Alex Smith", tomorrow.AddHours(10), tomorrow.AddHours(12));
         TryAdd(2, "Jane Doe", tomorrow.AddHours(13), tomorrow.AddHours(15));
+        TryAdd(2, "David Chen", today.AddDays(2).AddHours(9), today.AddDays(2).AddHours(11));
+        TryAdd(1, "Priya Patel", today.AddDays(3).AddHours(8), today.AddDays(3).AddHours(17));
+        TryAdd(3, "Liam Brown", today.AddDays(4).AddHours(7), today.AddDays(4).AddHours(18));
+
+        // later bookings
+        TryAdd(1, "Marcus Lee", today.AddDays(10).AddHours(13), today.AddDays(10).AddHours(16));
+        TryAdd(2, "Maria Garcia", today.AddDays(12).AddHours(14), today.AddDays(12).AddHours(16));
+        TryAdd(3, "Omar Haddad", today.AddDays(15).AddHours(9), today.AddDays(17).AddHours(17));
     }
 
     // if each one starts before the other ends, then it is a overlap

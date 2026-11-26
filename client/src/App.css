@@ -1,42 +1,157 @@
-#root {
-  max-width: 1280px;
+.container {
+  max-width: 960px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 24px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.hero {
+  background: var(--navy);
+  color: white;
+  border-top: 6px solid var(--teal);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero h1 {
+  margin: 8px 0;
+  font-size: 36px;
+  text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.eyebrow {
+  margin: 0;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: var(--teal-dark);
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
 }
 
 .card {
-  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  background: var(--gray);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
 }
 
-.read-the-docs {
-  color: #888;
+.card h3 {
+  margin: 0;
+}
+
+.card ul {
+  padding-left: 18px;
+}
+
+.card li {
+  margin-bottom: 8px;
+}
+
+.card button {
+  margin-top: auto;
+}
+
+.badge {
+  align-self: flex-start;
+  padding: 3px 12px;
+  border-radius: 99px;
+  font-size: 13px;
+}
+
+.free {
+  background: #d5f3e8;
+  color: #05603a;
+}
+
+.busy {
+  background: #fde4e4;
+  color: #b42318;
+}
+
+.panel {
+  margin-top: 32px;
+  padding: 20px;
+  background: var(--mint);
+  border-left: 6px solid var(--teal-dark);
+  border-radius: 12px;
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+label {
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  grid-column: 1 / -1;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+input,
+select {
+  border: 1px solid var(--border);
+  background: white;
+  font-weight: 400;
+}
+
+button {
+  background: var(--teal-dark);
+  color: white;
+  border: 1px solid var(--teal-dark);
+  cursor: pointer;
+}
+
+button.secondary {
+  background: white;
+  color: var(--teal-dark);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.success {
+  color: #05603a;
+}
+
+.error {
+  color: #b42318;
 }
