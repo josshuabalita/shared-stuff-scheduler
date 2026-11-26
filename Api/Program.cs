@@ -1,6 +1,12 @@
+using Api.Endpoints;
+using Api.Services;
+using Api.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSingleton<ReservationStore>();
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.MapReservationEndpoints();
 
-app.Run();
+app.Run("http://localhost:5080");
