@@ -1,0 +1,6 @@
+# C# build output
+bin/
+obj/
+
+# local reference files
+docs/
